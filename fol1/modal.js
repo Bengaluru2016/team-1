@@ -2,23 +2,7 @@
 var fb_name;
 
 //Google + code
-  function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
+ 
 
 
 //Facebook code 
@@ -164,32 +148,32 @@ document.write(""+
           "<button type='button' class='close' data-dismiss='modal'>&times;</button>"+
           "<h4 class='modal-title'>Register</h4>"+
         "</div>"+
-        "<div class='modal-body'>"+
-          "<form class='form-horizontal' role='form'>"+
-"    <div class='form-group'>"+
-      "<label class='control-label col-sm-2' for='email'>Username:</label>"+
-      "<div class='col-sm-10'>"+
-        "<input type='password' class='form-control' id='pwd' placeholder='username'>"+
-"      </div>"+
-    "</div>"+
-    "<div class='form-group'>"+
-      "<label class='control-label col-sm-2' for='pwd'>Password:</label>"+
-      
-	  "<div class='col-sm-10'>"+
-        "<input type='password' class='form-control' id='pwd' placeholder='password'>"+
-      "</div>"+
-    +
 
-
-      "<div id='my-signin2'>"+"</div>"+
-"<fb:login-button scope='public_profile,email' onlogin='checkLoginState();'>"+
-"</fb:login-button>"+
+    "<div class='modal-body'>"+
+        "<form class='form-horizontal' role='form'>"+
  
-"</div>"+
-        "<div class='modal-footer'>"+
-        
+       "<div class='form-group'>"+
+       "<label class='control-label col-sm-2' for='email'>Username:</label>"+
+         "<div class='col-sm-10'>"+
+         "<input type='password' class='form-control' id='pwd' placeholder='username'>"+
+         "</div>"+
+       "</div>"+
+    
+      "<div class='form-group'>"+
+      "<label class='control-label col-sm-2' for='pwd'>Password:</label>"+
+        "<div class='col-sm-10'>"+
+        "<input type='password' class='form-control' id='pwd' placeholder='password'>"+
         "</div>"+
-      "</div>"+
+        "<fb:login-button scope='public_profile,email' onlogin='checkLoginState();'>"+"</fb:login-button>"+"<div class='g-signin2' data-onsuccess='onSignIn'>"+"</div>"+
+      "</div>"   
+    
+
+
+    +"</div>"
+    
+   +"<div class='modal-footer'>"+"</div>"
+   
+   +"</div>"+
       
     "</div>"+
   "</div>"+

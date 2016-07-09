@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+ <meta name="google-signin-client_id" 
+content="642308447325-i5ng2ef2dei9or37ouuvfvrn2ofdkbq1.apps.googleusercontent.com">
 
     <title>Rang De</title>
 
@@ -27,6 +29,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="http://localhost/Rang%20De/team-1/fol1/modal.js"></script>
+ 
+
 
 </head>
 
@@ -34,8 +43,11 @@
 	<div class="top" style="background-color:#FFFFFF;">
 					<div><img src="logo.png" height="100px" width="100px">
 					
-					<a id=login href="login.php" class="login" style="width:120px;margin:10px; height:60px;color:#000000; font-size:25px; color:#000000;float:right;">Login</a>
-					<a id=login href="form.php" class="form" style="width:120px; margin:10px; height:60px;color:#000000; font-size:25px; float:right;">Register</a>
+				 <button type='button' class='btn btn-info btn-sm-10'
+  data-toggle='modal' data-target='#myModal'>LogIn</button>
+   <button type='button' class='btn btn-info btn-sm-10' 
+  data-toggle='modal' data-target='#myModal2'>Register</button>
+
 		</div>			
 					
 	</div>
