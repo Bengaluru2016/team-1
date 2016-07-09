@@ -1,0 +1,45 @@
+<header>  
+  <div class="container_12">
+       <div class="grid_12">
+        <h1>
+        <a href="index.html">
+          <img src="images/logo.png" alt="Your Happy Family">
+        </a>
+      </h1>
+        <div class="menu_block ">
+          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+            <ul class="sf-menu">
+                 <li><a href="admin.php">Home</a></li>
+                 <li><a href="vwpost.php">View Post</a></li>
+                 <li><a href="addpost.php">Add Post</a></li>
+                 <li><a href="index-3.html">Blog</a></li>
+                 <li><a href="loggout.php">LOGOUT</a></li>
+               </ul>
+            </nav>
+           <div class="clear"></div>
+        </div>
+      </div>      
+   </div>
+</header>
+<?php
+include "config.php";
+if(isset($_POST['sub']))
+{
+  $course=$_POST['txtCourse'];
+  if(is_uploaded_file($_FILES['file1']['tmp_name']))
+  {
+    $target="courses_img/".$_FILES['file1']['name'];
+    move_uploaded_file($_FILES['file1']['tmp_name'],$target);
+    //print_r($_POST);
+    //echo "<br><br>".$target;
+  }
+  $query="insert into `tbl_courses` (`course`,`img`) values ('$course','$target')";
+mysql_query($query);
+}
+?>
+<h3>Add Courses </h3>
+<form method="post" enctype="multipart/form-data">
+<input type="text" name="txtCourse" placeholder="Name of the Course">
+<input type="file" name="file1">
+<input type="submit" name="sub" value="ADD">
+</form>

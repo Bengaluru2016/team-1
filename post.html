@@ -1,0 +1,72 @@
+<header>  
+  <div class="container_12">
+       <div class="grid_12">
+        <h1>
+        <a href="index.html">
+          <img src="images/logo.png" alt="Your Happy Family">
+        </a>
+      </h1>
+        <div class="menu_block ">
+          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+            <ul class="sf-menu">
+                 <li><a href="admin.php">Home</a></li>
+                 <li class="current"><a href="vwpost.php">View Post</a></li>
+                 <li><a href="addpost.php">Add Post</a></li>
+                 <li><a href="index-3.html">Blog</a></li>
+                 <li><a href="loggout.php">LOGOUT</a></li>
+               </ul>
+            </nav>
+           <div class="clear"></div>
+        </div>
+      </div>      
+   </div>
+</header>
+<br><br><br>
+<div>
+<b>Title : </b>
+<i>
+<?php echo $title;?>
+</i>
+</div>
+<p>
+<?php echo $cont;?>
+</p>
+
+<?php
+if(isset($_SESSION['uname']))
+{
+if(isset($_POST['sub']))
+{
+$uname=$_SESSION['uname'];
+$cmt=$_POST['txtCmt'];
+if($uname=="admin")
+mysql_query("insert into tbl_cmt (post,uname,title,allow)values ('$cmt','$uname','$title',1)");
+else
+mysql_query("insert into tbl_cmt (post,uname,title,allow)values ('$cmt','$uname','$title',0)");
+
+}
+}
+else
+header("location:index.php");
+?>
+<form method=post>
+<fieldset>
+<legend>Post Your Comment Here</legend>
+<textarea name=txtCmt rows=8 cols=50>
+</textarea>
+<br><br>
+<input type=submit value=POST name=sub>
+</fieldset>
+</form>
+
+<fieldset>
+<legend>Previous Comments</legend>
+<table border=1 align=center width=80%>
+<?php
+
+$data=mysql_query("select * from tbl_cmt where allow=1 and title='$title'");
+while($rec=mysql_fetch_array($data))
+echo "<tr><td>$rec[1]</td><td>$rec[0]</td></tr>";
+?>
+<table>
+</fieldset>
