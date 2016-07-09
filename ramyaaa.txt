@@ -1,0 +1,13 @@
+//for insert
+<?php
+include('db.php');
+
+//print_r($_REQUEST);
+$s="insert into users values('".$_REQUEST['uname']."','".$_REQUEST['pass']."','".$_REQUEST['fname']."".$_REQUEST['lname']."','".$_REQUEST['num']."','".$_REQUEST['ip']."','".$_REQUEST['door']."','".$_REQUEST['street1']."','".$_REQUEST['city']."')";
+//$s1="insert into images_tbl values('','','".$_REQUEST['door']."','".$_REQUEST['city']."','".$_REQUEST['street1']."')";
+if($con->query($s))
+{
+	//if($con->query($s1))
+	header('Location:text.php');
+}
+?>
