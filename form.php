@@ -65,6 +65,7 @@
 			}
 			if(mobile.length!=10)
 			{
+				
 			alert("please enter mobile and 10 numbers");
 			document.getElementById("mobile").focus();
 			return false;

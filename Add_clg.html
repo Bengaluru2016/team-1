@@ -1,0 +1,97 @@
+<header>  
+  <div class="container_12">
+       <div class="grid_12">
+        <h1>
+        <a href="index.html">
+          <img src="images/logo.png" alt="Your Happy Family">
+        </a>
+      </h1>
+        <div class="menu_block ">
+          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+            <ul class="sf-menu">
+                 <li class="current"><a href="admin.php">Home</a></li>
+                 <li><a href="vwpost.php">View Post</a></li>
+                 <li><a href="addpost.php">Add Post</a></li>
+                 <li><a href="index-3.html">Blog</a></li>
+                 <li><a href="loggout.php">LOGOUT</a></li>
+               </ul>
+            </nav>
+           <div class="clear"></div>
+        </div>
+      </div>      
+   </div>
+</header>
+<style type="text/css">
+  .c1{
+
+width:20%;
+font-size: 20px;
+ }
+ .b1{
+  width:400;
+  height: 50px;
+  color: #009B97;
+   font-size: 2em;
+ }
+ .contact-details form input[type="text"], .contact-details form input[type="password"], .contact-details textarea
+  {
+    width: 47%;
+    margin-right: 4%;
+    padding: 12px;
+    border: 1px solid #E2E0ED;
+    font-size: 1em;
+    margin-bottom: 2em;
+    color: #131317;
+    background: none repeat scroll 0% 0% #FFF;
+    outline: medium none;
+    font-weight: 400;
+    font-family: "Lato",sans-serif;
+    transition: all 0.5s ease 0s;
+}
+ 
+</style>
+<?php
+include "config.php";
+if(isset($_POST['sub']))
+{
+  $course=$_POST['txtCourse'];
+  $clg_name=$_POST['txtCollg'];
+  $clg_about=$_POST['clg_abt'];
+  $dept=$_POST['clg_dept'];
+  $accmd=$_POST['clg_adt'];
+  $placements=$_POST['clg_pmt'];
+  $addr=$_POST['clg_addr'];
+  $phno=$_POST['txtPhno'];
+  $fax=$_POST['txtFax'];
+  $clg_url=$_POST['clgURL'];
+  //print_r($_POST);
+  if(is_uploaded_file($_FILES['file1']['tmp_name']))
+  {
+    $target="clg_img/".$_FILES['file1']['name'];
+    move_uploaded_file($_FILES['file1']['tmp_name'],$target);
+    //print_r($_POST);
+    //echo "<br><br>".$target;
+  }
+  $query="insert into `tbl_clg` (`course`,`clg_name`,`img`,`clg_about`,`dept`,`accmd`,`placements`,`addr`,`phno`,`fax`,`clg_url`) values ('$course','$clg_name','$target','$clg_about','$dept','$accmd','$placements','$addr','$phno','$fax','$clg_url')";
+mysql_query($query);
+
+}
+?>
+<h3>Add College </h3>
+<div class=contact-details>
+<form method="post" enctype="multipart/form-data">
+<input type="text" class=c1 name="txtCourse" placeholder="Name of the Course"><br>
+<input type="text" class=c1 name="txtCollg" placeholder="Name of the College"><br>
+<textarea rows=6 cols=25 class=c1 name="clg_abt" placeholder="About College"></textarea><br>
+<textarea rows=6 cols=25 class=c1 name="clg_dept" placeholder="Departments"></textarea><br>
+<textarea rows=6 cols=25 class=c1 name="clg_adt" placeholder="Accomodation"></textarea><br>
+<textarea rows=6 cols=25 class=c1 name="clg_pmt" placeholder="Placements"></textarea><br>
+<textarea rows=6 cols=25 class=c1 name="clg_addr" placeholder="Address"></textarea><br>
+<input type="text" class=c1 name="txtPhno" placeholder="Phone number"><br>
+<input type="text" class=c1 name="txtFax" placeholder="Fax"><br>
+<input type="text" class=c1 name="clgURL" placeholder="College Website"><br>
+<input type="file" name="file1"><br>
+<input type="submit" name="sub" class="b1" value="SUBMIT">
+</form>
+</div>
+
