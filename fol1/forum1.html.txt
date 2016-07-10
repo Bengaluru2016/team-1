@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 5px;
+    }
+	.row{background:#FF5733;}
+	.well {background-image:url("holi3.jpg");color:white;}
+	.jumbotron {background-image:url("rangde1.png");}
+	form {background:"#2ECC71";}
+	#demo4 {
+		background-color:white;
+	}
+	.col-sm-8 {
+		background-color:white;
+	}
+	.col-sm-2{
+		background-color:white;
+	}
+	.jumbotron{background-color:"#0080ff";
+	background-image:url("holi2.jpg");
+	}
+  </style>
+  <script type="text/javascript">
+  $("#demo4").hide();
+  function data1(){
+   var d=document.getElementById('#demo1');
+   
+   
+   $("#demo1").hide();
+ 
+    $("#demo11").hide();
+	$("#demo3").hide();
+	$("#demo4").hide();
+  }
+    function data2(){
+   var d=document.getElementById('#demo1');
+   
+   
+   $("#demo1").hide();
+   
+    $("#demo11").hide();
+
+   $("#demo2").hide();
+   $("#demo4").hide();
+   
+   $("#demo3").show();
+
+  }
+   function showdata1(){
+   var d=document.getElementById('#demo1');
+   
+   $("#demo11").show();
+   $("#demo1").show();
+   $("#demo2").hide();
+   $("#demo3").hide();
+   $("#demo4").hide();
+  }
+     function data3(){
+   var d=document.getElementById('#demo1');
+   
+   $("#demo11").hide();
+   $("#demo1").hide();
+   $("#demo2").hide();
+   $("#demo3").hide();
+   $("#demo4").show();
+   $("#fom").hide();
+   
+  }
+  </script>
+</head>
+<body>
+
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Range De forums</h1>
+    <p>Make your presence felt<br/>Anytime.Anywhere.<br/>
+	<button type="button" class="btn btn-default" class="btn btn-info"  data-target="#demo1" onclick="showdata1()">Mostly asked</button>
+<button type="button" class="btn btn-primary" class="btn btn-info" data-toggle="collapse" data-target="#demo2" onclick="data1();">Money matters..</button>
+<button type="button" class="btn btn-success" class="btn btn-info" data-toggle="collapse" data-target="#demo3" onclick="data2();">What you gain?</button>
+<button type="button" class="btn btn-success" class="btn btn-info" data-toggle="collapse" data-target="#demo4" onclick="data3();">Answers</button>
+	</p>
+  </div>
+</div>
+  
+<div class="container-fluid bg-3 text-center">
+  <div class=""row">
+ <form class="form-horizontal" role="form" id="fom">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Ask something.</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><input type="text" class="form-control" id="usr" placeholder="type in here"></p>
+    </div>
+  </div>
+</form>
+   <div class="well" id="demo1" ><h2>The Spirit of Rang De<h2><br/>
+		We decided on the name Rang De after a lot of thought. The name draws inspiration from India's struggle for independence. We believe that a similar movement with the same kind of urgency is required to address poverty in India. The words 'rang de' also denote colour and exuberance and that is the impact we want our efforts to have on the people we reach out to.
+		</div> 
+		<div class="well" id="demo11"><h2>Our Vision<h2><br/>
+Our vision is to make poverty history in India by reaching out to underserved communities through microcredit. We are striving to do this through a network of committed field partners and social investors, by offering microcredit that has a positive impact on business, education, health and environment of the communities we work with.		</div> 
+  </div>
+  </div>
+  <div class="row">
+<div class="col-sm-2"></div>
+  <div class="col-sm-8">
+	 <div id="demo4" class="collapse">
+		   <div class="well-sm"><h2>Q.What will i get?<h2><br/>
+	           Ans.Peace of mind		</div> 
+	
+	 <div class="well-sm" >
+	 <a href="#"><h2>how much should i invest</h2> <span class="badge">Answer it</span></a><br>
+<br />(unanswered)		</div> 
+
+	</div></div><div class="col-sm-2"></div>
+	
+		</div>
+     
+	 <div id="demo3" class="collapse">
+		   <div class="well"><h2>A drop in the sea...<h2><br/>
+Rang De is registered as a non-profit organisation because we strongly believe that
+ we are on a mission and cannot afford to lose focus.
+ Not wanting to concentrate on the argument about profit or non-profit		</div> 
+		<div class="well"><h2>Being Human<h2><br/>
+Our vision is to make poverty history in India by reaching out to underserved 
+communities through microcredit. We are striving to do this through a network 
+of committed field partners and social investors, by offering microcredit that
+ has a positive impact on business, education, health and environment of the communities we work with.		</div> 
+  </div>
+  	 <div id="demo2" class="collapse">
+		   <div class="well"><h2>A drop in the sea...<h2><br/>
+Rang De is registered as a non-profit organisation because we s
+trongly believe that we are on a mission and cannot afford to lose
+ focus. Not wanting to concentrate on the argument about profit or non-profit		</div> 
+		<div class="well"><h2>Being Human<h2><br/>
+Our vision is to make poverty history in India by reaching out to 
+underserved communities through microcredit. We are striving to do this through a 
+network of committed field partners and social investors, by offering microcredit
+ that has a positive impact on business, education, health and environment of the communities we work with.		</div> 
+  </div>
+  
+</div><br><br>
+
+
+</body>
+</html>
+
