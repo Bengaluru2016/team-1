@@ -180,6 +180,7 @@ var fb_name;
     FB.api('/me', function(response) {
    		fb_name=response.name;
                 console.log(fb_name);
+		$("#uname").val(fb_name);
     });
   }
 
