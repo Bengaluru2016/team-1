@@ -3,7 +3,96 @@ var fb_name;
 
 //Google + code
  
+			function validate()
+			{
+			//alert("test");
+			var fname=document.getElementById("fname");
+			var lname=document.getElementById("lname");
+			var uname=document.getElementById("uname");
+			var email=document.getElementById("email");
+			var password=document.getElementById("password");
+			var mobile=document.getElementById("mobile");
+			var gender=document.getElementById("g");
+			
+			var namePattern=/^[a-z A-Z]{1,50}$/;
+			var unamePattern=/^[a-z A-Z]{1}[a-z A-Z 0-9]{1,50}$/;
+			var emailpattern=/^[a-z]{1}[a-z 0-9]{1,10}@[a-z]{3,5}\.[a-z]{3}$/;
+			var passwordpattern=/^[a-z A-Z 0-9]{5}$/;
+			var mobilepattern=/^[0-9]{10}$/;
+			if(!namePattern.test(fname.value)){
+				alert("invalid first name");
+				return false;
+			}
 
+			if(!namePattern.test(lname.value)){
+				alert("invalid last name");
+				return false;
+			}
+			if(!unamePattern.test(uname.value)){
+				alert("invalid Username");
+				return false;
+			}
+			if((fname.value).length==0)
+			{
+			alert("please enter  firstname");
+			document.getElementById("fname").focus();
+			return false;
+			}
+			if(lname.value.length==0)
+			{
+			alert("please enter  lastname");
+			document.getElementById("lname").focus();
+			return false;
+			}
+			if(name.value.length==0)
+			{
+			alert("please enter  username");
+			document.getElementById("name").focus();
+			return false;
+			}
+			if(!emailpattern.test(email.value))
+			{
+			alert("please enter email ex. abc@xyz.com");
+			document.getElementById("email").focus();
+			return false;
+			}
+			if(!mobilepattern.test(mobile.value)){
+				alert("invalid mobile no.");
+				return false;
+			}
+			
+			if(email.length==0)
+			{
+			alert("please enter email");
+			document.getElementById("email").focus();
+			return false;
+			}
+			if(!email.match(emailpattern))
+			{
+			alert("please enter email ex. abc@xyz.com");
+			document.getElementById("email").focus();
+			return false;
+			}
+			if(password.length==0)
+			{
+			alert("Please enter password");
+			document.getElementById("password").focus();
+			return false;
+			}
+			if(mobile.length!=10)
+			{
+			alert("please enter mobile and 10 numbers");
+			document.getElementById("mobile").focus();
+			return false;
+			}
+			if(gender.length==0)
+			{
+				alert("Choose Male or Female");
+				return false;
+			}
+			
+				return true;	
+			}
 
 //Facebook code 
 
@@ -97,7 +186,7 @@ var fb_name;
 
 
 
-
+//models
 document.write(""+
   "<div class='modal fade' id='myModal' role='dialog'>"+
     "<div class='modal-dialog'>"+
@@ -135,10 +224,9 @@ document.write(""+
 
       "</ul>"+
     
-	"</div>");
+	"</div>"+
 
 
-document.write(""+
   "<div class='modal fade' id='myModal2' role='dialog'>"+
     "<div class='modal-dialog'>"+
     
@@ -149,25 +237,9 @@ document.write(""+
           "<h4 class='modal-title'>Register</h4>"+
         "</div>"+
 
-    "<div class='modal-body'>"+
-        "<form class='form-horizontal' role='form'>"+
- 
-       "<div class='form-group'>"+
-       "<label class='control-label col-sm-2' for='email'>Username:</label>"+
-         "<div class='col-sm-10'>"+
-         "<input type='password' class='form-control' id='pwd' placeholder='username'>"+
-         "</div>"+
-       "</div>"+
-    
-      "<div class='form-group'>"+
-      "<label class='control-label col-sm-2' for='pwd'>Password:</label>"+
-        "<div class='col-sm-10'>"+
-        "<input type='password' class='form-control' id='pwd' placeholder='password'>"+
-        "</div>"+
-        "<fb:login-button scope='public_profile,email' onlogin='checkLoginState();'>"+"</fb:login-button>"+"<div class='g-signin2' data-onsuccess='onSignIn'>"+"</div>"+
-      "</div>"   
-    
+    "<div class='modal-body'>"
 
++"<div w3-include-html='http://localhost/Rang%20De/team-1/fol1/form.html'>"+"</div>"   
 
     +"</div>"
     
@@ -182,3 +254,6 @@ document.write(""+
       "</ul>"+
     
 	"</div>");
+
+
+w3IncludeHTML();
